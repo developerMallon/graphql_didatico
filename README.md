@@ -21,6 +21,19 @@ app/
 
 ---
 
+### `requirements.txt`
+```txt
+fastapi
+uvicorn
+sqlalchemy
+strawberry-graphql
+pydantic
+databases
+aiofiles
+```
+
+---
+
 ### `database.py`
 ```python
 from sqlalchemy import create_engine
@@ -31,19 +44,6 @@ DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
-```
-
----
-
-### `requirements.txt`
-```txt
-fastapi
-uvicorn
-sqlalchemy
-strawberry-graphql
-pydantic
-databases
-aiofiles
 ```
 
 ---
