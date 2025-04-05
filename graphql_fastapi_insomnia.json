@@ -1,0 +1,121 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-04-05T00:00:00.000Z",
+    "__export_source": "insomnia.desktop.app:v2024.1.0",
+    "resources": [
+      {
+        "_id": "wrk_123456",
+        "created": 1680000000000,
+        "description": "",
+        "name": "FastAPI GraphQL",
+        "modified": 1680000000000,
+        "type": "workspace",
+        "_type": "workspace"
+      },
+      {
+        "_id": "env_123456",
+        "parentId": "wrk_123456",
+        "created": 1680000000000,
+        "modified": 1680000000000,
+        "name": "Base Environment",
+        "data": {
+          "base_url": "http://localhost:8000/graphql"
+        },
+        "_type": "environment"
+      },
+      {
+        "_id": "req_create_user",
+        "parentId": "wrk_123456",
+        "created": 1680000000000,
+        "modified": 1680000000000,
+        "method": "POST",
+        "body": {
+          "mimeType": "application/graphql",
+          "text": "mutation {\n  createUser(nome: \"Maria\", email: \"maria@email.com\", senha: \"abc123\") {\n    id\n    nome\n    email\n  }\n}"
+        },
+        "url": "{{ base_url }}",
+        "name": "Criar Usuário",
+        "description": "",
+        "parameters": [],
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "type": "graphql",
+        "_type": "request"
+      },
+      {
+        "_id": "req_list_users",
+        "parentId": "wrk_123456",
+        "created": 1680000000000,
+        "modified": 1680000000000,
+        "method": "POST",
+        "body": {
+          "mimeType": "application/graphql",
+          "text": "query {\n  users {\n    id\n    nome\n    email\n  }\n}"
+        },
+        "url": "{{ base_url }}",
+        "name": "Listar Usuários",
+        "description": "",
+        "parameters": [],
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "type": "graphql",
+        "_type": "request"
+      },
+      {
+        "_id": "req_update_user",
+        "parentId": "wrk_123456",
+        "created": 1680000000000,
+        "modified": 1680000000000,
+        "method": "POST",
+        "body": {
+          "mimeType": "application/graphql",
+          "text": "mutation {\n  updateUser(id: 1, nome: \"Maria Silva\", email: \"maria@email.com\", senha: \"novaSenha\") {\n    id\n    nome\n    email\n  }\n}"
+        },
+        "url": "{{ base_url }}",
+        "name": "Atualizar Usuário",
+        "description": "",
+        "parameters": [],
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "type": "graphql",
+        "_type": "request"
+      },
+      {
+        "_id": "req_delete_user",
+        "parentId": "wrk_123456",
+        "created": 1680000000000,
+        "modified": 1680000000000,
+        "method": "POST",
+        "body": {
+          "mimeType": "application/graphql",
+          "text": "mutation {\n  deleteUser(id: 1) {\n    id\n    nome\n  }\n}"
+        },
+        "url": "{{ base_url }}",
+        "name": "Deletar Usuário",
+        "description": "",
+        "parameters": [],
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "type": "graphql",
+        "_type": "request"
+      }
+    ]
+  }
+  
